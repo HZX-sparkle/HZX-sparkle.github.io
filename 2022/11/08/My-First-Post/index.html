@@ -189,7 +189,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2022-11-09 12:43:17</span>
+        <span class="pc">2022-11-09 12:47:00</span>
     </span>
     
     
@@ -224,45 +224,19 @@
 <h3 id="markdown基础语法"><a href="#markdown基础语法" class="headerlink" title="markdown基础语法"></a>markdown基础语法</h3><h4 id="标题语法"><a href="#标题语法" class="headerlink" title="标题语法"></a>标题语法</h4><p>要创建标题，可在句子或单词前加“#”号，“#”号的多少代表标题的等级。</p>
 <blockquote>
 <p>如<code>### 三级标题</code>将显示成</p>
-<h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3></blockquote>
-<p><strong>tips</strong></p>
-<p>最好在<code>#</code>和标题之间加一个空格，以方便兼容</p>
-<h4 id="段落语法"><a href="#段落语法" class="headerlink" title="段落语法"></a>段落语法</h4><p>要创建段落，请使用空白行将一行或多行文本进行分隔。</p>
-<p><strong>tips</strong></p>
-<p>不要用空格（spaces）或制表符（ tabs）缩进段落。</p>
-<table>
-<thead>
-<tr>
-<th>✅ Do this</th>
-<th>❌ Don’t do this</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>Don&#39;t put tabs or spaces in front of your paragraphs.</code></td>
-<td><code>  This can result in unexpected formatting problems. Don&#39;t add tabs or spaces in front of paragraphs.</code></td>
-</tr>
-</tbody></table>
-<h4 id="换行语法"><a href="#换行语法" class="headerlink" title="换行语法"></a>换行语法</h4><p>在一行的末尾添加两个或多个空格，然后按回车键,即可创建一个换行(<code>&lt;br&gt;</code>)</p>
-<p><strong>tips</strong></p>
-<p>几乎每个 Markdown 应用程序都支持两个或多个空格进行换行，称为 <code>结尾空格（trailing whitespace)</code> 的方式，但这是有争议的，因为很难在编辑器中直接看到空格，并且很多人在每个句子后面都会有意或无意地添加两个空格。由于这个原因，你可能要使用除结尾空格以外的其它方式来换行。幸运的是，几乎每个 Markdown 应用程序都支持另一种换行方式：HTML 的 <code>&lt;br&gt;</code> 标签。</p>
-<p>为了兼容性，请在行尾添加“结尾空格”或 HTML 的 <code>&lt;br&gt;</code> 标签来实现换行。</p>
-<p>还有两种其他方式我并不推荐使用。CommonMark 和其它几种轻量级标记语言支持在行尾添加反斜杠 (<code>\</code>) 的方式实现换行，但是并非所有 Markdown 应用程序都支持此种方式，因此从兼容性的角度来看，不推荐使用。并且至少有两种轻量级标记语言支持无须在行尾添加任何内容，只须键入回车键（<code>return</code>）即可实现换行。</p>
-<h4 id="强调语法"><a href="#强调语法" class="headerlink" title="强调语法"></a>强调语法</h4><p>要强调时，可用<code>粗体</code>或<code>斜体</code>两种方式，也可同时加粗加斜，</p>
-<p><code>**粗体**</code>渲染成<strong>粗体</strong></p>
-<p><code>*斜体*</code>渲染成<em>斜体</em></p>
-<p><code>***粗加斜***</code>渲染成<em><strong>粗加斜</strong></em></p>
-<p><strong>tips</strong></p>
-<p>虽然还有其他的方式进行强调，但为了兼容考虑，最好使用加<code>*</code>号的方法</p>
+<h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><p><strong>tips</strong><br>最好在<code>#</code>和标题之间加一个空格，以方便兼容</p>
+</blockquote>
+<h4 id="段落语法"><a href="#段落语法" class="headerlink" title="段落语法"></a>段落语法</h4><p>要创建段落，请使用空白行将一行或多行文本进行分隔。<br><strong>tips</strong><br>不要用空格（spaces）或制表符（ tabs）缩进段落。<br>| ✅ Do this                                               | ❌ Don’t do this                                              |<br>| ——————————————————- | ———————————————————— |<br>| <code>Don&#39;t put tabs or spaces in front of your paragraphs.</code> | <code>  This can result in unexpected formatting problems. Don&#39;t add tabs or spaces in front of paragraphs.</code> |</p>
+<h4 id="换行语法"><a href="#换行语法" class="headerlink" title="换行语法"></a>换行语法</h4><p>在一行的末尾添加两个或多个空格，然后按回车键,即可创建一个换行(<code>&lt;br&gt;</code>)<br><strong>tips</strong><br>几乎每个 Markdown 应用程序都支持两个或多个空格进行换行，称为 <code>结尾空格（trailing whitespace)</code> 的方式，但这是有争议的，因为很难在编辑器中直接看到空格，并且很多人在每个句子后面都会有意或无意地添加两个空格。由于这个原因，你可能要使用除结尾空格以外的其它方式来换行。幸运的是，几乎每个 Markdown 应用程序都支持另一种换行方式：HTML 的 <code>&lt;br&gt;</code> 标签。<br>为了兼容性，请在行尾添加“结尾空格”或 HTML 的 <code>&lt;br&gt;</code> 标签来实现换行。<br>还有两种其他方式我并不推荐使用。CommonMark 和其它几种轻量级标记语言支持在行尾添加反斜杠 (<code>\</code>) 的方式实现换行，但是并非所有 Markdown 应用程序都支持此种方式，因此从兼容性的角度来看，不推荐使用。并且至少有两种轻量级标记语言支持无须在行尾添加任何内容，只须键入回车键（<code>return</code>）即可实现换行。</p>
+<h4 id="强调语法"><a href="#强调语法" class="headerlink" title="强调语法"></a>强调语法</h4><p>要强调时，可用<code>粗体</code>或<code>斜体</code>两种方式，也可同时加粗加斜，<br><code>**粗体**</code>渲染成<strong>粗体</strong><br><code>*斜体*</code>渲染成<em>斜体</em><br><code>***粗加斜***</code>渲染成<em><strong>粗加斜</strong></em><br><strong>tips</strong><br>虽然还有其他的方式进行强调，但为了兼容考虑，最好使用加<code>*</code>号的方法</p>
 <h4 id="引用语法"><a href="#引用语法" class="headerlink" title="引用语法"></a>引用语法</h4><p>要创建块引用，请在段落前添加一个 <code>&gt;</code> 符号。</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; Dorothy followed her through many of the beautiful rooms in her castle.</span><br></pre></td></tr></table></figure>
-
 <p>渲染效果如下所示：</p>
 <blockquote>
 <p>Dorothy followed her through many of the beautiful rooms in her castle.</p>
 </blockquote>
 <h5 id="多个段落的块引用"><a href="#多个段落的块引用" class="headerlink" title="多个段落的块引用"></a>多个段落的块引用</h5><p>块引用可以包含多个段落。为段落之间的空白行添加一个 <code>&gt;</code> 符号。</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; Dorothy followed her through many of the beautiful rooms in her castle.</span><br><span class="line">&gt;</span><br><span class="line">&gt; The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.</span><br></pre></td></tr></table></figure>
-
 <p>渲染效果如下：</p>
 <blockquote>
 <p>Dorothy followed her through many of the beautiful rooms in her castle.</p>
@@ -270,7 +244,6 @@
 </blockquote>
 <h5 id="嵌套块引用"><a href="#嵌套块引用" class="headerlink" title="嵌套块引用"></a>嵌套块引用</h5><p>块引用可以嵌套。在要嵌套的段落前添加一个 <code>&gt;&gt;</code> 符号。</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; Dorothy followed her through many of the beautiful rooms in her castle.</span><br><span class="line">&gt;</span><br><span class="line">&gt;&gt; The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.</span><br></pre></td></tr></table></figure>
-
 <p>渲染效果如下：</p>
 <blockquote>
 <p>Dorothy followed her through many of the beautiful rooms in her castle.</p>
@@ -280,7 +253,6 @@
 </blockquote>
 <h5 id="带有其它元素的块引用"><a href="#带有其它元素的块引用" class="headerlink" title="带有其它元素的块引用"></a>带有其它元素的块引用</h5><p>块引用可以包含其他 Markdown 格式的元素。并非所有元素都可以使用，你需要进行实验以查看哪些元素有效。</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; #### The quarterly results look great!</span><br><span class="line">&gt;</span><br><span class="line">&gt; - Revenue was off the chart.</span><br><span class="line">&gt; - Profits were higher than ever.</span><br><span class="line">&gt;</span><br><span class="line">&gt;  *Everything* is going according to **plan**.</span><br></pre></td></tr></table></figure>
-
 <p>渲染效果如下：</p>
 <blockquote>
 <h4 id="The-quarterly-results-look-great"><a href="#The-quarterly-results-look-great" class="headerlink" title="The quarterly results look great!"></a>The quarterly results look great!</h4><ul>
