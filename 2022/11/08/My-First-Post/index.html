@@ -189,7 +189,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2022-11-09 12:50:20</span>
+        <span class="pc">2022-11-11 18:10:41</span>
     </span>
     
     
@@ -221,7 +221,8 @@
                 <h2 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h2><blockquote>
 <p>Markdown是一种轻量级标记语言，排版语法简洁，让人们更多地关注内容本身而非排版。它使用易读易写的纯文本格式编写文档，可与HTML混编，可导出 HTML、PDF 以及本身的 .md 格式的文件。因简洁、高效、易读、易写，Markdown被大量使用，如Github、Wikipedia、简书等。</p>
 </blockquote>
-<h3 id="markdown基础语法"><a href="#markdown基础语法" class="headerlink" title="markdown基础语法"></a>markdown基础语法</h3><h4 id="标题语法"><a href="#标题语法" class="headerlink" title="标题语法"></a>标题语法</h4><p>要创建标题，可在句子或单词前加“#”号，“#”号的多少代表标题的等级。</p>
+<h3 id="Markdown基础语法"><a href="#Markdown基础语法" class="headerlink" title="Markdown基础语法"></a>Markdown基础语法</h3><hr>
+<h4 id="标题语法"><a href="#标题语法" class="headerlink" title="标题语法"></a>标题语法</h4><p>要创建标题，可在句子或单词前加“#”号，“#”号的多少代表标题的等级。</p>
 <blockquote>
 <p>如<code>### 三级标题</code>将显示成</p>
 <h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3></blockquote>
@@ -273,6 +274,108 @@
 </ul>
 <p><em>Everything</em> is going according to <strong>plan</strong>.</p>
 </blockquote>
+<h4 id="列表语法"><a href="#列表语法" class="headerlink" title="列表语法"></a>列表语法</h4><p>将多个条目组织成有序或无序列表</p>
+<h5 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h5><p>创建有序列表，只需在数字后面加上英文句点即可，数字也无需按顺序排列，只需以1起始，如</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.</span><br><span class="line">2.</span><br><span class="line">3.</span><br></pre></td></tr></table></figure>
+
+<p>将显示成</p>
+<ol>
+<li><p>第一项</p>
+</li>
+<li><p>第二项</p>
+</li>
+<li><p>第三项</p>
+</li>
+</ol>
+<h5 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h5><p>创建一个无序列表，只需在每个列表项前加<code>-</code> ,<code>*</code>或<code>+</code>即可，如</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- one</span><br><span class="line">- two</span><br><span class="line">- three</span><br></pre></td></tr></table></figure>
+
+<p>将显示成</p>
+<ul>
+<li>one</li>
+<li>two</li>
+<li>three</li>
+</ul>
+<h5 id="嵌套列表"><a href="#嵌套列表" class="headerlink" title="嵌套列表"></a>嵌套列表</h5><p>在列表中，除了文字，我们还能插入其他的东西，只需在其之前添加四个空格键或者一个<code>tab</code>键即可。<br>如<strong>文字</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. first thing</span><br><span class="line">2. second thing</span><br><span class="line">	the other thing</span><br><span class="line">3. third thing</span><br></pre></td></tr></table></figure>
+
+<p>将表示成</p>
+<ol>
+<li>first thing</li>
+<li>second thing<br> the other thing</li>
+<li>third thing</li>
+</ol>
+<p><strong>引用块</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. first thing</span><br><span class="line">2. second thing</span><br><span class="line">	&gt;the other thing</span><br><span class="line">3. third thing</span><br></pre></td></tr></table></figure>
+
+<p>将表示成</p>
+<ol>
+<li>first thing</li>
+<li>second thing<blockquote>
+<p>the other thing</p>
+</blockquote>
+</li>
+<li>third thing</li>
+</ol>
+<p><strong>代码块</strong>（通常需要添加8个空格或2个<code>tab</code>键）</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1.  Open the file.</span><br><span class="line">2.  Find the following code block on line 21:</span><br><span class="line"></span><br><span class="line">        &lt;html&gt;</span><br><span class="line">          &lt;head&gt;</span><br><span class="line">            &lt;title&gt;Test&lt;/title&gt;</span><br><span class="line">          &lt;/head&gt;</span><br><span class="line"></span><br><span class="line">3.  Update the title to match the name of your website.</span><br></pre></td></tr></table></figure>
+
+<p>将表示成</p>
+<ol>
+<li><p> Open the file.</p>
+</li>
+<li><p>Find the following code block on line 21:</p>
+<pre><code> &lt;html&gt;
+   &lt;head&gt;
+     &lt;title&gt;Test&lt;/title&gt;
+   &lt;/head&gt;
+</code></pre>
+</li>
+<li><p> Update the title to match the name of your website.</p>
+</li>
+</ol>
+<h4 id="代码语法"><a href="#代码语法" class="headerlink" title="代码语法"></a>代码语法</h4><p>如果想将单词或语段显示成代码，可将其包含在反引号（`）中。<br>如</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`word`</span><br></pre></td></tr></table></figure>
+
+<p>将表示成<code>word</code></p>
+<h5 id="转义反引号"><a href="#转义反引号" class="headerlink" title="转义反引号"></a>转义反引号</h5><p>如果想让代码中出现反引号，可以将这段代码用双反引号包裹。<br>如</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">``这是一个带`的代码``</span><br></pre></td></tr></table></figure>
+
+<p>将表示成<code>这是一个带`的代码</code></p>
+<h5 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h5><p>如果想创建一个代码块，可以将代码的每一行至少缩进四个空格或一个<code>tab</code>键<br>如</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">include &lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">printf(&quot;Hello World!&quot;);</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>将表示成<br>    include &lt;stdio.h&gt;<br>    int main()<br>    {<br>    printf(“Hello World!”);<br>    return 0;<br>    }</p>
+<p>这种方法除了在列表中使用之外可能有些麻烦，所以我们还可以<strong>将代码块包裹在三个反引号或者三个波浪号之间</strong>来创建代码块。<br>如</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">~~~</span><br><span class="line">代码</span><br><span class="line">~~~</span><br></pre></td></tr></table></figure>
+
+<p>将表示成</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">代码</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             </div>
 
@@ -340,7 +443,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown"><span class="nav-text">Markdown</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#markdown%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="nav-text">markdown基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%87%E9%A2%98%E8%AF%AD%E6%B3%95"><span class="nav-text">标题语法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="nav-text">三级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AE%B5%E8%90%BD%E8%AF%AD%E6%B3%95"><span class="nav-text">段落语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8D%A2%E8%A1%8C%E8%AF%AD%E6%B3%95"><span class="nav-text">换行语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%BA%E8%B0%83%E8%AF%AD%E6%B3%95"><span class="nav-text">强调语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E8%AF%AD%E6%B3%95"><span class="nav-text">引用语法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%A4%9A%E4%B8%AA%E6%AE%B5%E8%90%BD%E7%9A%84%E5%9D%97%E5%BC%95%E7%94%A8"><span class="nav-text">多个段落的块引用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B5%8C%E5%A5%97%E5%9D%97%E5%BC%95%E7%94%A8"><span class="nav-text">嵌套块引用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B8%A6%E6%9C%89%E5%85%B6%E5%AE%83%E5%85%83%E7%B4%A0%E7%9A%84%E5%9D%97%E5%BC%95%E7%94%A8"><span class="nav-text">带有其它元素的块引用</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-quarterly-results-look-great"><span class="nav-text">The quarterly results look great!</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown"><span class="nav-text">Markdown</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Markdown%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="nav-text">Markdown基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%87%E9%A2%98%E8%AF%AD%E6%B3%95"><span class="nav-text">标题语法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="nav-text">三级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AE%B5%E8%90%BD%E8%AF%AD%E6%B3%95"><span class="nav-text">段落语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8D%A2%E8%A1%8C%E8%AF%AD%E6%B3%95"><span class="nav-text">换行语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%BA%E8%B0%83%E8%AF%AD%E6%B3%95"><span class="nav-text">强调语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E8%AF%AD%E6%B3%95"><span class="nav-text">引用语法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%A4%9A%E4%B8%AA%E6%AE%B5%E8%90%BD%E7%9A%84%E5%9D%97%E5%BC%95%E7%94%A8"><span class="nav-text">多个段落的块引用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B5%8C%E5%A5%97%E5%9D%97%E5%BC%95%E7%94%A8"><span class="nav-text">嵌套块引用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B8%A6%E6%9C%89%E5%85%B6%E5%AE%83%E5%85%83%E7%B4%A0%E7%9A%84%E5%9D%97%E5%BC%95%E7%94%A8"><span class="nav-text">带有其它元素的块引用</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-quarterly-results-look-great"><span class="nav-text">The quarterly results look great!</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E8%AF%AD%E6%B3%95"><span class="nav-text">列表语法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="nav-text">有序列表</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="nav-text">无序列表</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B5%8C%E5%A5%97%E5%88%97%E8%A1%A8"><span class="nav-text">嵌套列表</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E8%AF%AD%E6%B3%95"><span class="nav-text">代码语法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%BD%AC%E4%B9%89%E5%8F%8D%E5%BC%95%E5%8F%B7"><span class="nav-text">转义反引号</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="nav-text">代码块</span></a></li></ol></li></ol></li></ol></li></ol>
     </div>
 </div>
 
