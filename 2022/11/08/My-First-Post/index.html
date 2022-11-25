@@ -9,7 +9,7 @@
     
     <title>
         
-            My First Post |
+            Markdown学习日记 |
         
         Sp4&#39;s_B10g
     </title>
@@ -161,7 +161,7 @@
         <div class="article-content-container">
 
             <div class="article-title">
-                <span class="title-hover-animation">My First Post</span>
+                <span class="title-hover-animation">Markdown学习日记</span>
             </div>
 
             
@@ -189,7 +189,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2022-11-11 18:10:41</span>
+        <span class="pc">2022-11-25 18:17:30</span>
     </span>
     
     
@@ -224,8 +224,8 @@
 <h3 id="Markdown基础语法"><a href="#Markdown基础语法" class="headerlink" title="Markdown基础语法"></a>Markdown基础语法</h3><hr>
 <h4 id="标题语法"><a href="#标题语法" class="headerlink" title="标题语法"></a>标题语法</h4><p>要创建标题，可在句子或单词前加“#”号，“#”号的多少代表标题的等级。</p>
 <blockquote>
-<p>如<code>### 三级标题</code>将显示成</p>
-<h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3></blockquote>
+<p>如<code>#### 四级标题</code>将显示成</p>
+<h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4></blockquote>
 <p><strong>tips</strong><br>最好在<code>#</code>和标题之间加一个空格，以方便兼容</p>
 <h4 id="段落语法"><a href="#段落语法" class="headerlink" title="段落语法"></a>段落语法</h4><p>要创建段落，请使用空白行将一行或多行文本进行分隔。<br><strong>tips</strong><br>不要用空格（spaces）或制表符（ tabs）缩进段落。</p>
 <table>
@@ -354,28 +354,114 @@
 
 
 
+<h4 id="分割线语法"><a href="#分割线语法" class="headerlink" title="分割线语法"></a>分割线语法</h4><p>要添加一条分割线，只需使用三个星号（<code>***</code>）、破折号（<code>---</code>）或者下划线（<code>___</code>）即可，渲染结果如下，</p>
+<hr>
+<p><strong>tips</strong></p>
+<p>为了兼容性，我们需要在分割线上下添加空白行。</p>
+<h4 id="链接语法"><a href="#链接语法" class="headerlink" title="链接语法"></a>链接语法</h4><p>要添加链接，链接文本放在中括号内，链接地址放在后面的括号中，链接title可选。<br>超链接Markdown语法代码：<code>[超链接显示名](超链接地址 &quot;超链接title&quot;)</code>，如</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这是一个链接 [Markdown语法](https://markdown.com.cn)。</span><br></pre></td></tr></table></figure>
 
+<p>渲染效果如下：<br>这是一个链接 <a class="link"   target="_blank" rel="noopener" href="https://markdown.com.cn/" >Markdown语法<i class="fas fa-external-link-alt"></i></a>。</p>
+<h5 id="给链接增加title"><a href="#给链接增加title" class="headerlink" title="给链接增加title"></a>给链接增加title</h5><p>链接title是鼠标悬停在链接上时将出现的文字，要增加这样的效果，我们只需在链接后用引号添加链接title，同时用空格将两者分隔。<br>如</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">链接 [Markdown语法](https://markdown.com.cn &quot;come on, try out!&quot;)。</span><br></pre></td></tr></table></figure>
 
+<p>将渲染成：<br>链接 <a class="link"   target="_blank" rel="noopener" href="https://markdown.com.cn/"  title="come on, try out!">Markdown语法<i class="fas fa-external-link-alt"></i></a>。</p>
+<h5 id="网址和email地址"><a href="#网址和email地址" class="headerlink" title="网址和email地址"></a>网址和email地址</h5><p>将url和email地址用尖括号包裹即可将其变为链接。如</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;https://hzx-sparkle.github.io/&gt;</span><br><span class="line">&lt;2841287903@qq.com&gt;</span><br></pre></td></tr></table></figure>
 
+<p>将渲染成<br><a class="link"   target="_blank" rel="noopener" href="https://hzx-sparkle.github.io/" >https://hzx-sparkle.github.io/<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="mailto:&#x32;&#56;&#x34;&#x31;&#x32;&#56;&#x37;&#x39;&#48;&#51;&#64;&#x71;&#113;&#x2e;&#99;&#x6f;&#109;" >&#x32;&#56;&#x34;&#x31;&#x32;&#56;&#x37;&#x39;&#48;&#51;&#64;&#x71;&#113;&#x2e;&#99;&#x6f;&#109;<i class="fas fa-external-link-alt"></i></a></p>
+<h5 id="带格式化的链接"><a href="#带格式化的链接" class="headerlink" title="带格式化的链接"></a>带格式化的链接</h5><p>使链接带上强调，加斜，代码块等效果，与正常文本没有什么区别，只是需要注意一点，即变成代码块时，需要在方括号里加反引号。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">I love supporting the **[EFF](https://eff.org)**.</span><br><span class="line">This is the *[Markdown Guide](https://www.markdownguide.org)*.</span><br><span class="line">See the section on [`code`](#code).</span><br></pre></td></tr></table></figure>
 
+<p>将渲染成<br>I love supporting the <strong><a class="link"   target="_blank" rel="noopener" href="https://eff.org/" >EFF<i class="fas fa-external-link-alt"></i></a></strong>.<br>This is the <em><a class="link"   target="_blank" rel="noopener" href="https://www.markdownguide.org/" >Markdown Guide<i class="fas fa-external-link-alt"></i></a></em>.<br>See the section on <a href="#code"><code>code</code></a>.</p>
+<p><strong>tips</strong><br>为了更好的兼容，尽量用%20代替空格。</p>
+<table>
+<thead>
+<tr>
+<th align="center">✅ Do this</th>
+<th align="center">❌ Don’t do this</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>[link](https://www.example.com/my%20great%20page)</code></td>
+<td align="center"><code>[link](https://www.example.com/my great page)</code></td>
+</tr>
+</tbody></table>
+<h4 id="图片语法"><a href="#图片语法" class="headerlink" title="图片语法"></a>图片语法</h4><p>要添加图像，请使用感叹号 (<code>!</code>), 然后在方括号增加替代文本，图片链接放在圆括号里，括号里的链接后可以增加一个可选的图片标题文本。<br>插入图片Markdown语法代码：<code>![图片alt](图片链接 &quot;图片title&quot;)</code>。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![这是图片](E:\20220\Pictures\Saved Pictures\avatar.png &quot;avatar&quot;)</span><br></pre></td></tr></table></figure>
 
+<p>渲染效果如下，</p>
+<p>![这是图片](E:\20220\Pictures\Saved Pictures\avatar.png “avatar”)</p>
+<h5 id="图片链接"><a href="#图片链接" class="headerlink" title="图片链接"></a>图片链接</h5><p>给图片增加链接，可将图像的Markdown 括在方括号中，然后将链接添加在圆括号中。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[![这是图片](E:\20220\Pictures\Saved Pictures\logo1.png &quot;logo&quot;)](https://hzx-sparkle.github.io/)</span><br></pre></td></tr></table></figure>
 
+<p>渲染效果如下，<br><a class="link"   target="_blank" rel="noopener" href="https://hzx-sparkle.github.io/" >![这是图片](E:\20220\Pictures\Saved Pictures\logo1.png “logo”)<i class="fas fa-external-link-alt"></i></a></p>
+<h4 id="转义字符语法"><a href="#转义字符语法" class="headerlink" title="转义字符语法"></a>转义字符语法</h4><p>要显示原本用于格式化 Markdown 文档的字符，请在字符前面添加反斜杠字符 \ 。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\* Without the backslash, this would be a bullet in an unordered list.</span><br></pre></td></tr></table></figure>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<p>渲染效果如下：</p>
+<p>* Without the backslash, this would be a bullet in an unordered list.</p>
+<h5 id="可做转义的字符"><a href="#可做转义的字符" class="headerlink" title="可做转义的字符"></a>可做转义的字符</h5><p>以下列出的字符都可以通过使用反斜杠字符从而达到转义目的。</p>
+<table>
+<thead>
+<tr>
+<th>Character</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\</td>
+<td>backslash</td>
+</tr>
+<tr>
+<td>`</td>
+<td>backtick (see also <a class="link"   target="_blank" rel="noopener" href="https://markdown.com.cn/basic-syntax/escaping-characters.html#escaping-backticks" >escaping backticks in code<i class="fas fa-external-link-alt"></i></a>)</td>
+</tr>
+<tr>
+<td>*</td>
+<td>asterisk</td>
+</tr>
+<tr>
+<td>_</td>
+<td>underscore</td>
+</tr>
+<tr>
+<td>{ }</td>
+<td>curly braces</td>
+</tr>
+<tr>
+<td>[ ]</td>
+<td>brackets</td>
+</tr>
+<tr>
+<td>( )</td>
+<td>parentheses</td>
+</tr>
+<tr>
+<td>#</td>
+<td>pound sign</td>
+</tr>
+<tr>
+<td>+</td>
+<td>plus sign</td>
+</tr>
+<tr>
+<td>-</td>
+<td>minus sign (hyphen)</td>
+</tr>
+<tr>
+<td>.</td>
+<td>dot</td>
+</tr>
+<tr>
+<td>!</td>
+<td>exclamation mark</td>
+</tr>
+<tr>
+<td>|</td>
+<td>pipe (see also <a class="link"   target="_blank" rel="noopener" href="https://markdown.com.cn/extended-syntax/escaping-pipe-characters-in-tables.html" >escaping pipe in tables<i class="fas fa-external-link-alt"></i></a>)</td>
+</tr>
+</tbody></table>
 
             </div>
 
@@ -384,7 +470,7 @@
                     <div class="article-copyright-info-container">
     <ul class="copyright-info-content">
         <li>
-            <span class="type">Post title</span>：<span class="content">My First Post</span>
+            <span class="type">Post title</span>：<span class="content">Markdown学习日记</span>
         </li>
         <li>
             <span class="type">Post author</span>：<span class="content">Sparkle</span>
@@ -458,7 +544,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown"><span class="nav-text">Markdown</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Markdown%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="nav-text">Markdown基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%87%E9%A2%98%E8%AF%AD%E6%B3%95"><span class="nav-text">标题语法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="nav-text">三级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AE%B5%E8%90%BD%E8%AF%AD%E6%B3%95"><span class="nav-text">段落语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8D%A2%E8%A1%8C%E8%AF%AD%E6%B3%95"><span class="nav-text">换行语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%BA%E8%B0%83%E8%AF%AD%E6%B3%95"><span class="nav-text">强调语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E8%AF%AD%E6%B3%95"><span class="nav-text">引用语法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%A4%9A%E4%B8%AA%E6%AE%B5%E8%90%BD%E7%9A%84%E5%9D%97%E5%BC%95%E7%94%A8"><span class="nav-text">多个段落的块引用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B5%8C%E5%A5%97%E5%9D%97%E5%BC%95%E7%94%A8"><span class="nav-text">嵌套块引用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B8%A6%E6%9C%89%E5%85%B6%E5%AE%83%E5%85%83%E7%B4%A0%E7%9A%84%E5%9D%97%E5%BC%95%E7%94%A8"><span class="nav-text">带有其它元素的块引用</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-quarterly-results-look-great"><span class="nav-text">The quarterly results look great!</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E8%AF%AD%E6%B3%95"><span class="nav-text">列表语法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="nav-text">有序列表</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="nav-text">无序列表</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B5%8C%E5%A5%97%E5%88%97%E8%A1%A8"><span class="nav-text">嵌套列表</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E8%AF%AD%E6%B3%95"><span class="nav-text">代码语法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%BD%AC%E4%B9%89%E5%8F%8D%E5%BC%95%E5%8F%B7"><span class="nav-text">转义反引号</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="nav-text">代码块</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown"><span class="nav-text">Markdown</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Markdown%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="nav-text">Markdown基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%87%E9%A2%98%E8%AF%AD%E6%B3%95"><span class="nav-text">标题语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%9B%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="nav-text">四级标题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AE%B5%E8%90%BD%E8%AF%AD%E6%B3%95"><span class="nav-text">段落语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8D%A2%E8%A1%8C%E8%AF%AD%E6%B3%95"><span class="nav-text">换行语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%BA%E8%B0%83%E8%AF%AD%E6%B3%95"><span class="nav-text">强调语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E8%AF%AD%E6%B3%95"><span class="nav-text">引用语法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%A4%9A%E4%B8%AA%E6%AE%B5%E8%90%BD%E7%9A%84%E5%9D%97%E5%BC%95%E7%94%A8"><span class="nav-text">多个段落的块引用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B5%8C%E5%A5%97%E5%9D%97%E5%BC%95%E7%94%A8"><span class="nav-text">嵌套块引用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B8%A6%E6%9C%89%E5%85%B6%E5%AE%83%E5%85%83%E7%B4%A0%E7%9A%84%E5%9D%97%E5%BC%95%E7%94%A8"><span class="nav-text">带有其它元素的块引用</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-quarterly-results-look-great"><span class="nav-text">The quarterly results look great!</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E8%AF%AD%E6%B3%95"><span class="nav-text">列表语法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="nav-text">有序列表</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="nav-text">无序列表</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B5%8C%E5%A5%97%E5%88%97%E8%A1%A8"><span class="nav-text">嵌套列表</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E8%AF%AD%E6%B3%95"><span class="nav-text">代码语法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%BD%AC%E4%B9%89%E5%8F%8D%E5%BC%95%E5%8F%B7"><span class="nav-text">转义反引号</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="nav-text">代码块</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E5%89%B2%E7%BA%BF%E8%AF%AD%E6%B3%95"><span class="nav-text">分割线语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%93%BE%E6%8E%A5%E8%AF%AD%E6%B3%95"><span class="nav-text">链接语法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BB%99%E9%93%BE%E6%8E%A5%E5%A2%9E%E5%8A%A0title"><span class="nav-text">给链接增加title</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BD%91%E5%9D%80%E5%92%8Cemail%E5%9C%B0%E5%9D%80"><span class="nav-text">网址和email地址</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B8%A6%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%9A%84%E9%93%BE%E6%8E%A5"><span class="nav-text">带格式化的链接</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E8%AF%AD%E6%B3%95"><span class="nav-text">图片语法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E9%93%BE%E6%8E%A5"><span class="nav-text">图片链接</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6%E8%AF%AD%E6%B3%95"><span class="nav-text">转义字符语法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8F%AF%E5%81%9A%E8%BD%AC%E4%B9%89%E7%9A%84%E5%AD%97%E7%AC%A6"><span class="nav-text">可做转义的字符</span></a></li></ol></li></ol></li></ol></li></ol>
     </div>
 </div>
 
