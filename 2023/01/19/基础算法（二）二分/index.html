@@ -9,7 +9,7 @@
     
     <title>
         
-            基础算法（一）排序 |
+            基础算法（二）二分 |
         
         Sp4&#39;s_B10g
     </title>
@@ -161,7 +161,7 @@
         <div class="article-content-container">
 
             <div class="article-title">
-                <span class="title-hover-animation">基础算法（一）排序</span>
+                <span class="title-hover-animation">基础算法（二）二分</span>
             </div>
 
             
@@ -183,13 +183,13 @@
         
             <i class="fa-regular fa-calendar-plus"></i>&nbsp;
         
-        <span class="pc">2023-01-18 18:33:28</span>
-        <span class="mobile">2023-01-18 18:33</span>
+        <span class="pc">2023-01-19 08:51:36</span>
+        <span class="mobile">2023-01-19 08:51</span>
     </span>
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-01-18 22:00:17</span>
+        <span class="pc">2023-01-19 11:19:47</span>
     </span>
     
     
@@ -214,11 +214,11 @@
                     </li>
                 
                     <li>
-                        | <a href="/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">快速排序</a>&nbsp;
+                        | <a href="/tags/%E6%95%B4%E6%95%B0%E4%BA%8C%E5%88%86/">整数二分</a>&nbsp;
                     </li>
                 
                     <li>
-                        | <a href="/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/">归并排序</a>&nbsp;
+                        | <a href="/tags/%E5%AE%9E%E6%95%B0%E4%BA%8C%E5%88%86/">实数二分</a>&nbsp;
                     </li>
                 
             </ul>
@@ -237,29 +237,12 @@
             
 
             <div class="article-content keep-markdown-body">
-                <h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><p>快速排序（quick sort）是一种比较常用而且比较基础的排序算法，第一次知道这个算法还是当我查询c++的sort函数是如何实现的时候知道的，其实，c++的sort就是一种优化之后的快排。</p>
-<h3 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h3><p>快速排序的基本思想其实就是分治（divide and conquer），具体的实现逻辑可分为三步：</p>
-<ol>
-<li><strong>先从数组中确定一个数作为分界点</strong>，这个分界点的取法没有限制，我们一般取第一个数，最后一个数或中间的数均可。</li>
-<li><strong>调整区间</strong>，在确定分界点x后，数组被分成两个区间，我们在这一步要做的就是把数组中所有小于等于x的数放到左区间，所有大于等于x的数放到右区间。</li>
-<li><strong>递归处理左右两段</strong>，处理完左右两段后，两个区间已经有了基本的有序性，接下来我们只需对两段继续进行上述操作，直至个区间只有一个数，这样整个数组就是有序的了。</li>
-</ol>
-<h3 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h3><p>在了解快排的基本思想后，我们可以知道，第一步和第三步都是比较简单的，重要的是如何优美地实现第二步，对此，这里介绍两种实现方法。</p>
-<p>第一种，我们在原来数组Q的基础上，<strong>再创建两个额外的数组A和B</strong>，之后遍历数组Q，把所有小于等于x的数放到A中，所有大于x的数放到B中，遍历完之后，再把A和B写入Q中。这样的方法是很容易想到的，但有一个很明显的缺点，那就是创建数组需要内存空间，加上递归，需要的空间会很大，这样暴力的做法显然不能成为最优解，于是，我们来看看第二种。</p>
-<p>第二种做法，我们不创建新的数组，而是<strong>用两个指针a和b分别指向数组的最左端和最右端</strong>，然后让指针a开始向右移动，如果a指向的数是小于等于分界点x的，那么a++，直到a指向的数大于x，a停止移动，接着移动b，同理，如果b指向的数大于等于x的，那么b–，直到b指向的数小于等于x，b停止，然后我们交换a和b所指向的数，并继续上述操作，直到两指针相遇。通过这种方法，我们能够不占用任何额外空间，同时快速的完成区间的调整。</p>
-<h3 id="代码模板"><a href="#代码模板" class="headerlink" title="代码模板"></a>代码模板</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">quick_sort</span><span class="params">(<span class="type">int</span> q[], <span class="type">int</span> l, <span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (l &gt;= r) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">	<span class="type">int</span> x = q[l + r &gt;&gt; <span class="number">1</span>], i = l - <span class="number">1</span>, j = r + <span class="number">1</span>; <span class="comment">//选取分界点x， 并定义i和j</span></span><br><span class="line">	<span class="keyword">while</span> (i &lt; j)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">while</span> (q[++i] &lt; x); <span class="comment">//移动i直至q[i]&gt;=x</span></span><br><span class="line">		<span class="keyword">while</span> (q[--j] &gt; x); <span class="comment">//移动j直至q[j]&lt;=x</span></span><br><span class="line">		<span class="keyword">if</span> (i &lt; j)</span><br><span class="line">		&#123;	<span class="comment">//交换两个数</span></span><br><span class="line">			<span class="type">int</span> temp = q[i];</span><br><span class="line">			q[i] = q[j];</span><br><span class="line">			q[j] = temp;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//递归处理左右两段</span></span><br><span class="line">	<span class="built_in">quick_sort</span>(q, l, j);</span><br><span class="line">	<span class="built_in">quick_sort</span>(q, j + <span class="number">1</span>, r);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><p>归并排序（merge sort）也是一种比较常见的排序方法，这里可以说是把递归运用到了极致，一开始我还有点晕，之后看了关于归并操作的<a class="link"   target="_blank" rel="noopener" href="https://juejin.cn/post/6844903717645352974" >图解<i class="fas fa-external-link-alt"></i></a>之后就清晰多了。</p>
-<h3 id="基本思想-1"><a href="#基本思想-1" class="headerlink" title="基本思想"></a>基本思想</h3><p>这里归并排序也是采用了分治的策略，具体实现方法如下：</p>
-<ol>
-<li><strong>选取分界点</strong>，和快排一样，我们需要选择一个分界点，但是，我们这里一般是选择中间点。</li>
-<li><strong>递归排序</strong>，这一部分是比较难理解的，这样说，如果要完成后面的归并，我们合并的这两个区间首先必须得是有序的，但是我们选取完分界点后，显然两个区间不会是完全有序的，这样我们就需要进行递归，一直递归到几乎每个区间都只剩一个数，这样我们能说每个区间都是有序的，然后再来进行下面的操作。</li>
-<li><strong>归并——合二为一</strong>，在递归操作后，我们能保证要合并的两个区间是有序的，接下来我们需要做的就是把那两个区间里的数合并起来，是两个区间合并成一个有序的大区间。</li>
-</ol>
-<h3 id="实现方法-1"><a href="#实现方法-1" class="headerlink" title="实现方法"></a>实现方法</h3><p>第二步比较难理解，但是不难实现，这里我们重点介绍第三步，也就是归并的实现方法。像上面快排一样，我们可以用两个指针a和b，分别指向两个区间的起点，然后新建一个数组arr存放两个区间合并之后的结果，<strong>我们比较a和b指向的数，较小的一个数存入arr中，指向较小的数的指针向前移动一格</strong>，这样重复操作，直至有一个指针走到了末尾，接下来由于两个区间都是有序的，我们可以直接将另一个指针指向的区间剩余部分直接存入arr中，这样两个有序区间就能合并成一个更大的有序区间。</p>
-<h3 id="代码模板-1"><a href="#代码模板-1" class="headerlink" title="代码模板"></a>代码模板</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">merge_sort</span><span class="params">(<span class="type">int</span> q[], <span class="type">int</span> l, <span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (l &gt;= r) <span class="keyword">return</span>;</span><br><span class="line">	<span class="type">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//递归至底端</span></span><br><span class="line">	<span class="built_in">merge_sort</span>(q, l, mid);</span><br><span class="line">	<span class="built_in">merge_sort</span>(q, mid + <span class="number">1</span>, r);</span><br><span class="line"></span><br><span class="line">	<span class="type">int</span> k = <span class="number">0</span>, i = l, j = mid + <span class="number">1</span>;</span><br><span class="line">    <span class="comment">//对两区间中的数进行比较并合并</span></span><br><span class="line">	<span class="keyword">while</span> (i &lt;= mid &amp;&amp; j &lt;= r)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (q[i] &lt; q[j]) temp[k++] = q[i++];</span><br><span class="line">		<span class="keyword">else</span> temp[k++] = q[j++];</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//如果一段走到末尾，则将另一段剩下所有数存入temp</span></span><br><span class="line">	<span class="keyword">while</span> (i &lt;= mid) temp[k++] = q[i++];</span><br><span class="line">	<span class="keyword">while</span> (j &lt;= r) temp[k++] = q[j++];</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = l, j = <span class="number">0</span>; i &lt;= r; ++i, ++j)</span><br><span class="line">	&#123;</span><br><span class="line">		q[i] = temp[j];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+                <h2 id="整数二分"><a href="#整数二分" class="headerlink" title="整数二分"></a>整数二分</h2><p>二分查找这个概念很多人应该都知道，但许多初学者经常遇到的一个误区就是，他们觉得只有当一个数组有序的时候才能用二分，其实这是不对的。</p>
+<h3 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h3><p>二分分的是<strong>某个性质</strong>，只要这个数组满足能够一分为二，左边满足这个性质，右边不满足这个性质，那么我们就可以通过二分查找到这个性质的<strong>边界</strong>，这才是二分的本质，我们可以找<strong>边界上满足这个性质</strong>的，也可以找<strong>边界上不满足这个性质</strong>的，由此我们有两种情况，下面分别来说。</p>
+<h3 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h3><p>第一种情况，对一个数组Q，左右两端记为<strong>l</strong>和<strong>r</strong>，当我们要找边界上满足这个性质的数的时候，我们先有中间数mid，之后我们判断q[mid]是否满足这个性质，如果满足，则将区间缩小至[ mid , r ]，否则将区间缩小至[ l , mid-1 ]，这样重复下去，直至区间中只剩一个数，这个数就是我们要找的边界上满足这个性质的数。</p>
+<p>第二种情况，当我们要找边界上不满足这个性质的数时，一样地，我们判断q[mid]是否满足这个性质，如果满足，则将区间缩小至[mid+1 , r]，否则将区间缩小至[ l , mid ]。</p>
+<p>在刚刚接触这个的时候，很多人都觉得这个有点抽象，不好理解，不知道这个区间为什么是这样变的，我说说我的理解，首先最重要的一点，我们需要保证<strong>区间内我们要找的点是始终存在的</strong>，拿第一种情况举例，我们要找的点是满足这个性质的，所以当mid也满足这个性质时，我们可以说mid应该包含在之后的区间里，因为在极端情况下，mid完全有可能就是我们要找的这个点，反之，当我们已经知道mid不满足这个性质，那我们就能说，我们要找的点肯定不是mid，这时我们划分区间时就应该把mid去掉，其次，我们应该<strong>尽量使区间端点有着不同的性质</strong>，因为我们找的是边界点，如果区间内所有的点都满足这个性质，那么还谈何边界呢？当我们清楚这两点后，接下来的代码实现就不难了。</p>
+<h3 id="代码模板"><a href="#代码模板" class="headerlink" title="代码模板"></a>代码模板</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="comment">//当区间划分为[mid+1 , r]和[l , mid]时</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">b_search1</span><span class="params">(<span class="type">int</span> l, <span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span> (l &lt; r)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">check</span>(mid)) r = mid;</span><br><span class="line">		<span class="keyword">else</span> l = mid + <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> l;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//当区间划分为[mid , r]和[l , mid-1]时</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">b_search2</span><span class="params">(<span class="type">int</span> l, <span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span> (l &lt; r)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> mid = l + r + <span class="number">1</span> &gt;&gt; <span class="number">1</span>; <span class="comment">//这里要注意当l=mid时要让mid = l + r + 1 &gt;&gt; 1</span></span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">check</span>(mid)) l = mid;</span><br><span class="line">		<span class="keyword">else</span> r = mid - <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> l;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -271,16 +254,16 @@
                     <div class="article-copyright-info-container">
     <ul class="copyright-info-content">
         <li>
-            <span class="type">Post title</span>：<span class="content">基础算法（一）排序</span>
+            <span class="type">Post title</span>：<span class="content">基础算法（二）二分</span>
         </li>
         <li>
             <span class="type">Post author</span>：<span class="content">Sparkle</span>
         </li>
         <li>
-            <span class="type">Create time</span>：<span class="content">2023-01-18 18:33:28</span>
+            <span class="type">Create time</span>：<span class="content">2023-01-19 08:51:36</span>
         </li>
         <li class="post-link">
-            <span class="type">Post link</span>：<span class="content">2023/01/18/基础算法（一）排序/</span>
+            <span class="type">Post link</span>：<span class="content">2023/01/19/基础算法（二）二分/</span>
         </li>
         <li>
             <span class="type">Copyright Notice</span>：<span class="content">All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.</span>
@@ -299,11 +282,11 @@
                         </li>
                     
                         <li class="tag-item">
-                            <a href="/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">#快速排序</a>&nbsp;
+                            <a href="/tags/%E6%95%B4%E6%95%B0%E4%BA%8C%E5%88%86/">#整数二分</a>&nbsp;
                         </li>
                     
                         <li class="tag-item">
-                            <a href="/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/">#归并排序</a>&nbsp;
+                            <a href="/tags/%E5%AE%9E%E6%95%B0%E4%BA%8C%E5%88%86/">#实数二分</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -312,29 +295,14 @@
             
                 <div class="article-nav">
                     
-                        <div class="article-prev">
-                            <a class="prev"
-                               rel="prev"
-                               href="/2023/01/19/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%EF%BC%88%E4%BA%8C%EF%BC%89%E4%BA%8C%E5%88%86/"
-                            >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                                <span class="title flex-center">
-                                <span class="post-nav-title-item">基础算法（二）二分</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                            </a>
-                        </div>
-                    
                     
                         <div class="article-next">
                             <a class="next"
                                rel="next"
-                               href="/2022/12/24/Clion%E7%9A%84%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/"
+                               href="/2023/01/18/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%EF%BC%88%E4%B8%80%EF%BC%89%E6%8E%92%E5%BA%8F/"
                             >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Clion的常用快捷键</span>
+                                <span class="post-nav-title-item">基础算法（一）排序</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                                 <span class="right arrow-icon flex-center">
@@ -353,7 +321,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F"><span class="nav-text">快速排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3"><span class="nav-text">基本思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95"><span class="nav-text">实现方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF"><span class="nav-text">代码模板</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F"><span class="nav-text">归并排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3-1"><span class="nav-text">基本思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95-1"><span class="nav-text">实现方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF-1"><span class="nav-text">代码模板</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B4%E6%95%B0%E4%BA%8C%E5%88%86"><span class="nav-text">整数二分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3"><span class="nav-text">基本思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95"><span class="nav-text">实现方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF"><span class="nav-text">代码模板</span></a></li></ol></li></ol>
     </div>
 </div>
 
