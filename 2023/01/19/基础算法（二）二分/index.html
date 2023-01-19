@@ -189,7 +189,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-01-19 11:19:47</span>
+        <span class="pc">2023-01-19 17:27:12</span>
     </span>
     
     
@@ -218,7 +218,7 @@
                     </li>
                 
                     <li>
-                        | <a href="/tags/%E5%AE%9E%E6%95%B0%E4%BA%8C%E5%88%86/">实数二分</a>&nbsp;
+                        | <a href="/tags/%E6%B5%AE%E7%82%B9%E6%95%B0%E4%BA%8C%E5%88%86/">浮点数二分</a>&nbsp;
                     </li>
                 
             </ul>
@@ -246,6 +246,8 @@
 
 
 
+<h2 id="浮点数二分"><a href="#浮点数二分" class="headerlink" title="浮点数二分"></a>浮点数二分</h2><p>和整数二分不同，浮点数二分我们不需要去考虑边界问题，这就使得浮点数二分的实现简单了许多。基本思想与整数二分一致，我们下面讲讲它的实现方法。</p>
+<h3 id="实现方法-1"><a href="#实现方法-1" class="headerlink" title="实现方法"></a>实现方法</h3><p>由于是浮点数，我们每次二分时能严格地将区间一分为二，与整数二分一样的，我们每次选取区间时要满足两个条件，即保证<strong>区间内我们要找的点是始终存在的</strong>，同时<strong>尽量使区间端点有着不同的性质</strong>，而与整数二分不同的是它的结束条件，当<strong>两个区间端点的距离足够近</strong>时，我们就可以结束循环，将r或者l当作我们的答案。</p>
 
             </div>
 
@@ -286,7 +288,7 @@
                         </li>
                     
                         <li class="tag-item">
-                            <a href="/tags/%E5%AE%9E%E6%95%B0%E4%BA%8C%E5%88%86/">#实数二分</a>&nbsp;
+                            <a href="/tags/%E6%B5%AE%E7%82%B9%E6%95%B0%E4%BA%8C%E5%88%86/">#浮点数二分</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -321,7 +323,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B4%E6%95%B0%E4%BA%8C%E5%88%86"><span class="nav-text">整数二分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3"><span class="nav-text">基本思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95"><span class="nav-text">实现方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF"><span class="nav-text">代码模板</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B4%E6%95%B0%E4%BA%8C%E5%88%86"><span class="nav-text">整数二分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3"><span class="nav-text">基本思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95"><span class="nav-text">实现方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF"><span class="nav-text">代码模板</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0%E4%BA%8C%E5%88%86"><span class="nav-text">浮点数二分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95-1"><span class="nav-text">实现方法</span></a></li></ol></li></ol>
     </div>
 </div>
 
